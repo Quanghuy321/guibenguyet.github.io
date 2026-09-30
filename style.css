@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root{color-scheme:light;--pink:#f34d83;--pink-dark:#bd2860;--ink:#4e2638;--glass:rgba(255,255,255,.74)}
+*{box-sizing:border-box}
+html{min-height:100%;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;min-height:100svh;font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:radial-gradient(ellipse at 15% 10%,#fff9f3 0,transparent 40%),linear-gradient(145deg,#ffe5ed,#ffd0df 48%,#ffc0d6);overflow-x:hidden}
+button,input{font:inherit}
+button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.container{min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:24px}
+.calculator-screen,.birthday-screen .wishes-page,.birthday-card{position:relative;z-index:2;width:min(100%,540px);padding:clamp(22px,5vw,38px);border:1px solid rgba(255,255,255,.82);border-radius:30px;background:var(--glass);box-shadow:0 24px 70px rgba(143,46,87,.16);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.input-avatar-row{display:flex;align-items:center;gap:22px}
+.avatar-square{width:clamp(92px,24vw,150px);aspect-ratio:1;flex:none;overflow:hidden;border:5px solid white;border-radius:24px;box-shadow:0 10px 25px #9b3c6540}
+.avatar-square img{width:100%;height:100%;display:block;object-fit:cover}
+.input-and-keypad{flex:1;min-width:0}
+.calculator-title{margin-bottom:12px;color:var(--pink-dark);font-size:clamp(16px,4vw,21px);font-weight:900;line-height:1.25}
+.display{width:100%;height:52px;padding:10px 14px;border:1px solid #f3a3bd;border-radius:16px;background:#fff9fc;color:var(--pink-dark);text-align:center;font-size:22px;letter-spacing:.3em;outline:none}
+.buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:13px}
+.btn{min-height:52px;border:0;border-radius:16px;color:#fff;font-size:20px;font-weight:900;cursor:pointer;box-shadow:0 5px 12px #bb3d6a26;transition:transform .16s,filter .16s}
+.btn:active,.open-btn:active,.birthday-card .btn:active{transform:scale(.96)}
+.btn-number{background:linear-gradient(145deg,#ff9dbb,#ec5487)}.btn-clear{background:linear-gradient(145deg,#ffa7a7,#ef7185)}.btn-enter{background:linear-gradient(145deg,#ffc86e,#fa8d5c)}
+.birthday-screen{min-height:100vh;min-height:100svh;display:none;place-items:center;padding:20px}
+.wishes-page{text-align:center}.main-title{margin:0 0 8px;color:var(--pink-dark);font-size:clamp(25px,6vw,42px);line-height:1.12;font-weight:900}.subtitle{margin:0 0 22px;color:#9f4165;font-size:clamp(18px,4vw,25px)}
+.card-section{display:flex;flex-direction:column;align-items:center;gap:20px}.card-box{width:min(65vw,250px);height:min(72vw,300px);padding:9px;border:3px solid #fff;border-radius:24px;background:#fff9;box-shadow:0 16px 35px #9b3c6530}.ny-img{width:100%;height:100%;display:block;object-fit:cover;border-radius:17px}
+.open-btn,.birthday-card .btn{min-height:54px;padding:14px 26px;border:0;border-radius:999px;background:linear-gradient(100deg,#f34d83,#c42f76);color:white;font-weight:900;font-size:17px;box-shadow:0 10px 22px #c42f7640;cursor:pointer}
+#hearts-container{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:1}.heart{position:absolute;width:22px;height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f34d83' d='M12 21s-9-5.6-9-12a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.4-9 12-9 12z'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 4px 5px #9f416533);animation:heart-fall linear forwards}
+@keyframes heart-fall{from{transform:translateY(-8vh) rotate(-10deg);opacity:0}12%{opacity:.8}to{transform:translateY(110vh) rotate(30deg);opacity:0}}
+.shake{animation:shake .35s ease}@keyframes shake{25%,75%{transform:translateX(-5px)}50%{transform:translateX(5px)}}
+
+/* Album and greeting pages */
+.album-page,.greeting-page{position:relative;min-height:100vh;min-height:100svh;overflow-x:hidden}
+.album-page{background:linear-gradient(145deg,#ffe5ed,#ffc2d6)}
+.album-heading{position:relative;z-index:2;padding:22px 18px 12px;text-align:center;color:var(--pink-dark);text-shadow:0 2px white}
+.album-heading h1{margin:0;font-size:clamp(25px,7vw,42px)}.album-heading p{margin:4px 0 0;font-weight:700}
+.album-grid{position:relative;z-index:2;display:flex;align-items:center;width:100%;height:calc(100svh - 110px);min-height:300px;overflow:hidden;padding:18px 0}
+.album-loop{display:flex;align-items:center;width:max-content;animation:move-left 38s linear infinite;will-change:transform}
+.album-grid:hover .album-loop{animation-play-state:paused}
+.album-track{display:flex;align-items:center;gap:clamp(12px,2.5vw,24px);padding-right:clamp(12px,2.5vw,24px)}
+.album-img{flex:none;width:clamp(150px,37vw,260px);height:min(58vh,390px);object-fit:cover;padding:6px;border:1px solid white;border-radius:18px;background:#fff;box-shadow:0 12px 25px #7c25402b}
+.album-img:nth-child(4n+1){transform:translateY(-24%)}
+.album-img:nth-child(4n+2){transform:translateY(-8%)}
+.album-img:nth-child(4n+3){transform:translateY(8%)}
+.album-img:nth-child(4n){transform:translateY(24%)}
+@keyframes photo-in{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes move-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.greeting-page{display:grid;place-items:center;padding:22px}.birthday-card{text-align:center;max-width:620px;animation:card-in .7s ease both}.birthday-card h2{margin:0 0 14px;color:var(--pink-dark);font-size:clamp(30px,8vw,48px);line-height:1.1}.birthday-card p{margin:0;color:#63394b;font-size:clamp(16px,4.1vw,19px);line-height:1.65}.birthday-card .btn{margin-top:22px}@keyframes card-in{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(min-width:650px){.album-grid{height:calc(100svh - 125px);padding-inline:18px}.album-img{width:clamp(220px,26vw,340px);height:min(64vh,470px);border-radius:22px}.calculator-screen{width:min(100%,650px)}.input-avatar-row{gap:30px}}
+@media(max-width:420px){.container{padding:16px}.calculator-screen{padding:20px 16px;border-radius:24px}.input-avatar-row{gap:13px}.avatar-square{width:78px;border-width:3px;border-radius:18px}.buttons{gap:7px}.btn{min-height:49px;border-radius:14px}.birthday-screen{padding:14px}.birthday-screen .wishes-page{padding:24px 17px}.album-grid{height:calc(100svh - 100px)}.album-img{width:42vw;height:min(52vh,310px);padding:4px;border-radius:15px}}
+@media(orientation:landscape) and (max-height:520px){.container,.birthday-screen{padding-block:10px}.calculator-screen{padding:18px 24px}.avatar-square{width:90px}.btn{min-height:42px}.birthday-screen .wishes-page{padding:18px}.card-box{height:170px;width:140px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}

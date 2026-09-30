@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffe5ed">
+  <title>Món quà sinh nhật</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="preload">
+  <main class="container">
+    <section class="calculator-screen" id="calculatorScreen" aria-label="Mở thiệp sinh nhật">
+      <div class="input-avatar-row">
+        <div class="avatar-square"><img src="image2.png" alt="Ảnh kỷ niệm"></div>
+        <div class="input-and-keypad">
+          <h1 class="calculator-title">Nhập ngày sinh của em nhé 💗</h1>
+          <input id="display" class="display" aria-label="Mã ngày sinh" placeholder="••••" type="password" readonly>
+          <div class="buttons" aria-label="Bàn phím số">
+            <button class="btn btn-number" data-digit="1">1</button><button class="btn btn-number" data-digit="2">2</button><button class="btn btn-number" data-digit="3">3</button>
+            <button class="btn btn-number" data-digit="4">4</button><button class="btn btn-number" data-digit="5">5</button><button class="btn btn-number" data-digit="6">6</button>
+            <button class="btn btn-number" data-digit="7">7</button><button class="btn btn-number" data-digit="8">8</button><button class="btn btn-number" data-digit="9">9</button>
+            <button class="btn btn-clear" id="clearButton" aria-label="Xóa mã">C</button><button class="btn btn-number" data-digit="0">0</button><button class="btn btn-enter" id="enterButton" aria-label="Mở thiệp">✓</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="birthdayScreen" class="birthday-screen" aria-live="polite">
+      <div class="wishes-page">
+        <h1 class="main-title">💌 Chúc mừng sinh nhật!</h1>
+        <h2 class="subtitle">Công chúa của anh, Nguyệt (Bé Pi)</h2>
+        <div class="card-section">
+          <div class="card-box"><img src="image1.png" alt="Tấm thiệp sinh nhật" class="ny-img"></div>
+          <button class="open-btn" id="openGiftButton">Mở quà nè 🎁</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="hearts-container" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
