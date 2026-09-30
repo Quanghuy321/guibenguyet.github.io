@@ -1,0 +1,53 @@
+/* style.css - pastel pink birthday theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;height:100vh;background:linear-gradient(135deg,#ffd0e0 0%,#ffc0d4 50%,#ffb3cf 100%);overflow:hidden}
+.container{height:100vh;display:flex;align-items:center;justify-content:center}
+.calculator-screen{background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);padding:30px;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,0.12);width:420px}
+.input-avatar-row{display:flex;gap:20px;align-items:center}
+.avatar-square{width:90px;height:90px;border-radius:12px;overflow:hidden;flex:0 0 90px;border:4px solid rgba(255,255,255,0.25)}
+.avatar-square img{width:100%;height:100%;object-fit:cover;display:block}
+.input-and-keypad{flex:1}
+.calculator-title{color:#d83b8c;font-weight:700;margin-bottom:8px;font-size:20px}
+.display{width:100%;padding:12px;border-radius:18px;border:3px solid rgba(255,0,102,0.18);outline:none;letter-spacing:6px;font-size:18px;background:rgba(255,255,255,0.12);color:#fff}
+.buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.btn{padding:12px;border-radius:14px;border:none;background:rgba(255,255,255,0.08);color:#fff;font-weight:600;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,0.08)}
+.btn-number{background:linear-gradient(180deg,#ffb3cf,#ff7aa3);}
+.btn-clear{background:linear-gradient(180deg,#ffd6d6,#ffb0b0)}
+.btn-enter{background:linear-gradient(180deg,#ffd27a,#ff9f7a)}
+
+/* birthday screen */
+.birthday-screen{height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center}
+.main-title{font-size:36px;color:#ad1f75;margin-bottom:8px;text-transform:uppercase;letter-spacing:3px}
+.subtitle{color:#fff;font-weight:700;margin-bottom:18px}
+.card-section{display:flex;flex-direction:column;align-items:center;gap:20px}
+.card-box{width:220px;height:260px;background:rgba(255,255,255,0.12);border-radius:12px;padding:12px;border:4px solid rgba(255,255,255,0.2);box-shadow:0 18px 30px rgba(0,0,0,0.1)}
+.card-box .ny-img{width:100%;height:100%;object-fit:cover;border-radius:8px;box-shadow:0 10px 20px rgba(0,0,0,0.1)}
+
+.open-btn{padding:16px 34px;border-radius:28px;border:none;background:linear-gradient(180deg,#ff3b97,#c81f8f);color:#fff;font-weight:800;cursor:pointer;box-shadow:0 20px 40px rgba(200,40,120,0.24)}
+
+/* hearts falling */
+#hearts-container{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:hidden}
+.heart{position:absolute;width:28px;height:28px;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path fill="%23ff2f6d" d="M14 25s-9-5.9-11-9c-2.5-4.1 0-8 3-9 2.8-1 5.5.5 6 2 .5-1.5 3.2-3 6-2 3 1 5.5 4.9 3 9-2 3.1-11 9-11 9z"/></svg>') no-repeat center/contain;opacity:0.95;filter:drop-shadow(0 6px 10px rgba(0,0,0,0.12))}
+
+/* album */
+.album-page{height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#ffd0e0,#ffc0d4)}
+.album-grid{width:100%;height:100%;position:relative;display:block;padding:40px}
+.album-img{position:absolute;width:220px;height:320px;object-fit:cover;border-radius:12px;border:5px solid rgba(255,255,255,0.6);box-shadow:0 12px 24px rgba(0,0,0,0.15);transform:scale(0);animation:popIn 0.8s ease forwards}
+.album-img:nth-child(1){left:8%;top:10%;animation-delay:0.1s}
+.album-img:nth-child(2){left:20%;top:30%;animation-delay:0.25s}
+.album-img:nth-child(3){left:5%;top:50%;animation-delay:0.4s}
+.album-img:nth-child(4){left:38%;top:20%;animation-delay:0.55s}
+.album-img:nth-child(5){left:60%;top:40%;animation-delay:0.7s}
+.album-img:nth-child(6){left:72%;top:12%;animation-delay:0.85s}
+.album-img:nth-child(7){left:80%;top:52%;animation-delay:1s}
+.album-img:nth-child(8){left:50%;top:65%;animation-delay:1.15s}
+
+@keyframes popIn{to{transform:scale(1);opacity:1}}
+
+/* responsive tweaks */
+@media (max-width:700px){
+  .calculator-screen{width:320px;padding:18px}
+  .card-box{width:160px;height:200px}
+  .album-img{width:140px;height:200px}
+}
